@@ -68,6 +68,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: SessionForge-v3-Windows-Executable
-          path: dist/SessionForge/SessionForge.exe
+          path: dist/SessionForge.exe
           if-no-files-found: error
           retention-days: 30

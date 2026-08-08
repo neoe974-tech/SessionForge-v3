@@ -27,7 +27,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "Create a Desktop shortcut"; GroupDescription: "Additional shortcuts:"; Flags: unchecked
 
 [Files]
-Source: "..\dist\SessionForge\SessionForge.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\dist\SessionForge.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\X-core SessionForge"; Filename: "{app}\{#MyAppExeName}"
