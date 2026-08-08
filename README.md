@@ -97,18 +97,18 @@ Linux users can run the Python version directly from the source repository.
 
 For Debian/Kali/Ubuntu:
 
-sudo apt update
+**sudo apt update
 sudo apt install -y python3 python3-pip python3-tk git
 2. Clone the repository
 git clone https://github.com/neoe974-tech/SessionForge-v3.git
 cd SessionForge-v3
-3. Install Python dependencies
+3. Install Python dependencies**
 
 If your distribution uses the externally-managed Python environment, use:
 
-python3 -m pip install -r requirements.txt --break-system-packages
+**python3 -m pip install -r requirements.txt --break-system-packages
 4. Launch SessionForge
-python3 SessionForge_v3.py
+python3 SessionForge_v3.py**
 
 The application should open the X-Core SessionForge interface.
 
@@ -116,12 +116,12 @@ The application should open the X-Core SessionForge interface.
 
 For Kali/Debian:
 
-sudo apt update
+**sudo apt update
 sudo apt install -y python3 python3-pip python3-tk git
 git clone https://github.com/neoe974-tech/SessionForge-v3.git
 cd SessionForge-v3
 python3 -m pip install -r requirements.txt --break-system-packages
-python3 SessionForge_v3.py
+python3 SessionForge_v3.py**
 📁 Project Structure
 SessionForge-v3/
 ├── SessionForge_v3.py
