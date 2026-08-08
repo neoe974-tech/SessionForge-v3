@@ -1,0 +1,73 @@
+name: Build Windows Installer
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install pyinstaller
+
+      - name: Build SessionForge executable
+        run: |
+          python -m PyInstaller --clean --noconfirm SessionForge.spec
+
+      - name: Install Inno Setup
+        shell: powershell
+        run: |
+          choco install innosetup -y --no-progress
+
+      - name: Build Windows installer
+        shell: powershell
+        run: |
+          New-Item -ItemType Directory -Force -Path release | Out-Null
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "installer\SessionForge.iss"
+
+      - name: Verify installer
+        shell: powershell
+        run: |
+          if (-not (Test-Path "release\SessionForge-v3.0-Setup.exe")) {
+            Write-Error "Installer was not created."
+            exit 1
+          }
+
+          Get-Item "release\SessionForge-v3.0-Setup.exe" |
+            Select-Object Name, Length, FullName
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: SessionForge-v3-Windows-Installer
+          path: release/SessionForge-v3.0-Setup.exe
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: SessionForge-v3-Windows-Executable
+          path: dist/SessionForge/SessionForge.exe
+          if-no-files-found: error
+          retention-days: 30
