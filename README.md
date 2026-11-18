@@ -7,24 +7,24 @@ It provides a clean interface for entering a target website and working with ses
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🌐 Target website input
-- 🍪 Session/cookie data handling
-- 📄 JSON session-data support
-- 🔐 `cookies.txt` support
-- 📋 HTTP Cookie header support
-- ✅ Session-data validation
-- 📊 Validation status and entry count
-- 🖥️ Modern dark X-Core interface
-- 📦 Windows installer
-- ⚙️ Python-based application
-- 📦 PyInstaller Windows packaging
-- 🔧 Automated Windows builds with GitHub Actions
+-  Target website input
+-  Session/cookie data handling
+-  JSON session-data support
+-  `cookies.txt` support
+-  HTTP Cookie header support
+- Session-data validation
+-  Validation status and entry count
+-  Modern dark X-Core interface
+-  Windows installer
+-  Python-based application
+-  PyInstaller Windows packaging
+-  Automated Windows builds with GitHub Actions
 
 ---
 
-## 🎯 Intended Use
+##  Intended Use
 
 SessionForge is intended for:
 
@@ -123,7 +123,7 @@ The X-Core SessionForge interface should open.
 > python3 SessionForge_v3.py
 
 
-**🚀 Basic Usage
+** Basic Usage
 Open X-Core SessionForge.
 Enter the target URL in the Target Website field.
 Provide session data in the Session Data module.
@@ -132,7 +132,7 @@ Review the validation/status information.
 Use the browser launch functionality only against an authorized target.**
 
 
-**📁 Project Structure
+** Project Structure
 SessionForge-v3/
 ├── SessionForge_v3.py
 ├── SessionForge-v3.0-Setup.exe
@@ -164,7 +164,7 @@ Use test accounts and test environments whenever possible.
 **
 
 
-**📜 End User License Agreement (EULA)
+** End User License Agreement (EULA)
 X-Core SessionForge v3.0**
 
 Effective Version: 3.0.0
