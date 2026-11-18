@@ -237,16 +237,4 @@ X-Core SessionForge is a security-testing and development tool.
 Only test websites, applications, accounts, and session data that you own or have explicit authorization to assess.
 
 
-### One correction I strongly recommend
-
-Your original text says:
-
-> "Click Launch Browser to initiate the testing environment."
-
-I'd keep the wording **"authorized target"** around that feature, as in the revised version above. It makes the purpose of the project clearer and avoids presenting it as a general-purpose account/session-access tool.
-
-Also, use **`SessionForge_v3_embedded.py`** consistently in the Linux instructions, because that's the version we actually packaged and used for the successful Windows build.
-
-
-
 
